@@ -72,7 +72,7 @@ function Snake(){
 	this.eat = function(){
 		masterFrameRate += 0.5;
 		this.tailLength += 5;
-		if(this.tailStart > 0){
+		if(this.tailStart >= 5){
 			this.tailStart -= 5;
 		}
 	}
