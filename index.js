@@ -4,7 +4,27 @@ var snakeDead = false;
 var pauseGame = false;
 var masterFrameRate = 12;
 var invincible = false;
+var highScore = (getCookie("highscore") === "") ? 0 : getCookie("highscore");
 var snake, food;
+
+function setCookie(cname, cvalue) {
+    document.cookie = cname + "=" + cvalue + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
 function windowResized(){
 	resizeCanvas(floor((windowWidth * 0.8)/scl)*scl, floor((windowHeight * 0.8)/scl)*scl)
@@ -13,6 +33,9 @@ function windowResized(){
 }
 
 function dead(){
+	if(snake.tailLength > highScore){
+		highScore = snake.tailLength;
+	}
 	noLoop();
 	background(255)
 	fill(0);
@@ -25,7 +48,8 @@ function dead(){
 	text("restart", width/2, height/2 + 25);
 	noFill();
 	stroke(0);
-	rect(width/2 - 75, height/2, 150, 50, 5)
+	rect(width/2 - 75, height/2, 150, 50, 5);
+	setCookie("highscore", highScore);
 }
 
 function Snake(){
