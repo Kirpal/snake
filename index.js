@@ -152,7 +152,8 @@ function draw(){
 	textSize(20);
 	textAlign(CENTER, CENTER);
 	text(snake.tailLength - 1, width/2, 30);
-	text(highScore, width/2, 60);
+// 	text(highScore, width/2, 60);
+	console.log(highScore);
 }
 
 function keyPressed(){
