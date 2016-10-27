@@ -2,7 +2,7 @@
 var scl = 20;
 var snakeDead = false;
 var pauseGame = false;
-var masterFrameRate = 8;
+var masterFrameRate = 12;
 var invincible = false;
 var snake, food;
 
@@ -157,7 +157,7 @@ function mousePressed(){
 			snakeDead = false;
 			pauseGame = false;
 			invincible = false;
-			masterFrameRate = 8;
+			masterFrameRate = 12;
 			frameRate(masterFrameRate);
 			snake = new Snake();
 			food = new Food();
@@ -180,7 +180,7 @@ function arrayEquals(a, b){
 var cheatCodes = [
 	{
 		action: function(){
-			masterFrameRate = 8;
+			masterFrameRate = 12;
 		}, 
 		keys: [55, 56]
 	}, {
@@ -189,7 +189,7 @@ var cheatCodes = [
 			for(var i = 0; i < tailToAdd; i++){
 				snake.eat();
 			}
-			masterFrameRate = 8;
+			masterFrameRate = 12;
 		}, 
 		keys: [75, 73, 82, 80, 65, 76]
 	}, {
