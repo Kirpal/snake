@@ -46,10 +46,10 @@ function Snake(){
 	}
 	
 	this.eat = function(){
-		masterFrameRate += 1;
-		this.tailLength += 1;
+		masterFrameRate += 0.5;
+		this.tailLength += 5;
 		if(this.tailStart > 0){
-			this.tailStart -= 1;
+			this.tailStart -= 5;
 		}
 	}
 	
