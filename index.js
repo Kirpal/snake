@@ -33,8 +33,8 @@ function windowResized(){
 }
 
 function dead(){
-	if(snake.tailLength > highScore){
-		highScore = snake.tailLength;
+	if(snake.tailLength - 1 > highScore){
+		highScore = snake.tailLength - 1;
 	}
 	noLoop();
 	background(255)
@@ -152,6 +152,7 @@ function draw(){
 	textSize(20);
 	textAlign(CENTER, CENTER);
 	text(snake.tailLength - 1, width/2, 30);
+	text(highScore, width/2, 60);
 }
 
 function keyPressed(){
