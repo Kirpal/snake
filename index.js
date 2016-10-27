@@ -235,6 +235,11 @@ var cheatCodes = [
 			masterFrameRate = 24;
 		},
 		keys: [54, 57]
+	}, {
+		action: function(){
+			invincible = false;
+		},
+		keys: [65, 69, 68]
 	}
 ];
 var currentKeys = [];
