@@ -155,6 +155,9 @@ function draw(){
 	textSize(20);
 	textAlign(CENTER, CENTER);
 	text(snake.tailLength - 1, width/2, 30);
+	if(snake.tailLength - 1 > highScore){
+		highScore = snake.tailLength - 1;
+	}
 	textSize(12);
 	textAlign(LEFT, BOTTOM);
 	text("HIGHSCORE: " + highScore, 10, height - 10);
