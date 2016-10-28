@@ -59,6 +59,7 @@ function Snake(){
 	this.tail = [];
 	this.tailStart = -1;
 	this.tailLength = 1;
+	this.tailToAdd = 0;
 	
 	this.turn = function(x, y){
 		if(x !== this.speed[0] * -1 && y !== this.speed[1] * -1){
@@ -71,14 +72,14 @@ function Snake(){
 	
 	this.eat = function(){
 		masterFrameRate += 0.5;
-		this.tailLength += 5;
-		if(this.tailStart >= 5){
-			this.tailStart -= 5;
-		}
+		this.tailToAdd = 5;
 	}
 	
 	this.update = function(){
-		this.tailStart += 1;
+		if(this.tailToAdd > 0){
+			this.tailStart += 1;
+			this.tailToAdd -= 1;
+		}
 		this.pos.x += this.speed[0];
 		this.pos.y += this.speed[1];
 		if(this.pos.x < 0 || this.pos.x >= floor(width/scl) || this.pos.y < 0 || this.pos.y >= floor(height/scl)){
