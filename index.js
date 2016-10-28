@@ -77,8 +77,10 @@ function Snake(){
 	
 	this.update = function(){
 		if(this.tailToAdd > 0){
-			this.tailStart += 1;
 			this.tailToAdd -= 1;
+			this.tailLength += 1;
+		}else{
+			this.tailStart += 1;
 		}
 		this.pos.x += this.speed[0];
 		this.pos.y += this.speed[1];
