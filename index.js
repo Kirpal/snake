@@ -72,7 +72,7 @@ function Snake(){
 	
 	this.eat = function(){
 		masterFrameRate += 0.5;
-		this.tailToAdd = 5;
+		this.tailToAdd += 5;
 	}
 	
 	this.update = function(){
